@@ -2,13 +2,13 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors, parameters} from '../global/styles';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
-const Header = ({title}) => {
+const Header = ({title, type}) => {
   return (
     <View style={styles.header}>
       <View style={{marginLeft: 20, marginTop: 3}}>
         <AntDesign
           type="material-community"
-          name="arrowleft"
+          name={type}
           color={colors.headerText}
           size={24}
           onPress={() => {}}
