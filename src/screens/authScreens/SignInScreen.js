@@ -1,9 +1,10 @@
 import {StyleSheet, Text, View, TextInput} from 'react-native';
 import React, {useState, useRef} from 'react';
 import Header from '../../components/Header';
-import {title, colors} from '../../global/styles';
+import {title, colors, parameters} from '../../global/styles';
 import * as Animatable from 'react-native-animatable';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import {Button, SocialIcon} from 'react-native-elements';
 
 const SignInScreen = () => {
   const [textInput2Focus, setTextInput2Focus] = useState(false);
@@ -64,6 +65,49 @@ const SignInScreen = () => {
           </Animatable.View>
         </View>
       </View>
+      <View style={{marginHorizontal: 20, marginTop: 30}}>
+        <Button
+          title="SIGN IN"
+          buttonStyle={parameters.StyledButton}
+          titleStyle={parameters.buttonTitle}
+        />
+      </View>
+      <View style={{alignItems: 'center', marginTop: 20}}>
+        <Text style={{...styles.text1, textDecorationLine: 'underline'}}>
+          Forgot Password ?
+        </Text>
+      </View>
+      <View style={{alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}>OR</Text>
+      </View>
+      <View style={{marginHorizontal: 10}}>
+        <SocialIcon
+          title="Sign In With Facebook"
+          button
+          type="facebook"
+          style={styles.SocialIcon}
+          onPress={() => {}}
+        />
+      </View>
+      <View style={{marginHorizontal: 10}}>
+        <SocialIcon
+          title="Sign In With Google"
+          button
+          type="google"
+          style={styles.SocialIcon}
+          onPress={() => {}}
+        />
+      </View>
+      <View style={{marginTop: 10, marginLeft: 20}}>
+        <Text style={{...styles.text1}}>New on Eat-Now ?</Text>
+      </View>
+      <View style={{alignItems: 'flex-end', marginHorizontal: 20}}>
+        <Button
+          titleStyle={styles.CreateButtonTitle}
+          title="Create an account"
+          buttonStyle={styles.CreateButton}
+        />
+      </View>
     </View>
   );
 };
@@ -96,5 +140,27 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     paddingLeft: 15,
+  },
+  SocialIcon: {
+    borderRadius: 12,
+    height: 50,
+  },
+  CreateButton: {
+    backgroundColor: 'white',
+    alignContent: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#31493c',
+    height: 40,
+    paddingHorizontal: 20,
+  },
+  CreateButtonTitle: {
+    color: '#31493c',
+    fontSize: 16,
+    fontWeight: 'bold',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    // marginTop: 3,
   },
 });
