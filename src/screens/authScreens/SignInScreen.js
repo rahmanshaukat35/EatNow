@@ -6,14 +6,14 @@ import * as Animatable from 'react-native-animatable';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import {Button, SocialIcon} from 'react-native-elements';
 
-const SignInScreen = () => {
+const SignInScreen = ({navigation}) => {
   const [textInput2Focus, setTextInput2Focus] = useState(false);
 
   const textInput1 = useRef(1);
   const textInput2 = useRef(2);
   return (
     <View style={styles.container}>
-      <Header title="MY ACCOUNT" type="arrowleft" />
+      <Header title="MY ACCOUNT" type="arrowleft" navigation={navigation} />
       <View style={{marginLeft: 20, marginTop: 10}}>
         <Text style={title}>Sign-In</Text>
       </View>
