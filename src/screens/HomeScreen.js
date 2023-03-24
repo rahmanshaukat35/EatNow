@@ -8,11 +8,15 @@ import {
   FlatList,
   Pressable,
   Image,
+  Dimensions,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
 import HomeHeader from '../components/HomeHeader';
 import {colors} from '../global/styles';
-import {filterData} from '../global/Data';
+import {filterData, restaurantsData} from '../global/Data';
+import FoodCard from '../components/FoodCard';
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
 const HomeScreen = () => {
   const [delivery, setDelivery] = useState(true);
   const [indexCheck, setIndexCheck] = useState('0');
@@ -130,6 +134,28 @@ const HomeScreen = () => {
         </View>
         <View style={styles.headerTextView}>
           <Text style={styles.headerText}>Free delivery now</Text>
+        </View>
+        <View>
+          <FlatList
+            style={{marginTop: 10, marginBottom: 10}}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={restaurantsData}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item}) => (
+              <View style={{marginRight: 5}}>
+                <FoodCard
+                  screenWidth={SCREEN_WIDTH * 0.8}
+                  images={item.images}
+                  restaurantName={item.restaurantName}
+                  farAway={item.farAway}
+                  businessAddress={item.businessAddress}
+                  averageReview={item.averageReview}
+                  numberOfReviews={item.numberOfReviews}
+                />
+              </View>
+            )}
+          />
         </View>
       </ScrollView>
     </View>
