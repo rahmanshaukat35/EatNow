@@ -4,11 +4,13 @@ export const colors = {
   grey2: '#5e6977',
   grey3: '#86939e',
   grey4: '#e1e8ee',
+  grey5: '#e1e8ee',
   CardComment: '#86939e',
   cardbackground: 'white',
   StatusBar: '#31493c',
   headerText: 'white',
   background2: '#31493c',
+  lightgreen: '#66DF48',
 };
 
 export const parameters = {

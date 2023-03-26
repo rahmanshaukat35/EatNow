@@ -80,7 +80,7 @@ export const restaurantsData = [
           'https://cdn.trendhunterstatic.com/thumbs/407/mcchicken-delicato.jpeg?auto=webp',
       },
     ],
-    id: 1,
+    id: 2,
   },
   {
     restaurantName: 'Dr. Sausy',
@@ -114,7 +114,7 @@ export const restaurantsData = [
           'https://cdn.trendhunterstatic.com/thumbs/407/mcchicken-delicato.jpeg?auto=webp',
       },
     ],
-    id: 1,
+    id: 3,
   },
   {
     restaurantName: 'Steers',
@@ -148,6 +148,6 @@ export const restaurantsData = [
           'https://cdn.trendhunterstatic.com/thumbs/407/mcchicken-delicato.jpeg?auto=webp',
       },
     ],
-    id: 1,
+    id: 4,
   },
 ];
