@@ -17,6 +17,7 @@ function RootClientTabs() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
+          headerShown: false,
           tabBarIcon: ({color, size}) => (
             <Icon name="home" type="material" color={color} size={size} />
           ),
