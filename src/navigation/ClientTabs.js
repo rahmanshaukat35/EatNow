@@ -28,6 +28,7 @@ function RootClientTabs() {
         component={SearchScreen}
         options={{
           tabBarLabel: 'Search',
+          headerShown: false,
           tabBarIcon: ({color, size}) => (
             <Icon name="search" type="material" color={color} size={size} />
           ),
@@ -38,6 +39,7 @@ function RootClientTabs() {
         component={MyOrderScreen}
         options={{
           tabBarLabel: 'My-Orders',
+          headerShown: false,
           tabBarIcon: ({color, size}) => (
             <Icon name="view-list" type="material" color={color} size={size} />
           ),
@@ -48,6 +50,7 @@ function RootClientTabs() {
         component={MyAccountScreen}
         options={{
           tabBarLabel: 'My Account',
+          headerShown: false,
           tabBarIcon: ({color, size}) => (
             <Icon name="person" type="material" color={color} size={size} />
           ),
