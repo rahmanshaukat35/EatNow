@@ -7,19 +7,35 @@ import {
   TextInput,
   FlatList,
   Keyboard,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState, useRef} from 'react';
 import {colors} from '../global/styles';
 import {Icon} from 'react-native-elements';
 import * as Animatable from 'react-native-animatable';
 import {useNavigation} from '@react-navigation/native';
-import {TouchableOpacity} from 'react-native';
 import {filterData} from '../global/Data';
-const SearchComponent = ({navigation}) => {
+const SearchComponent = () => {
+  const navigation = useNavigation();
   const [data, setData] = useState([...filterData]);
   const [modalVisible, setModalVisible] = useState(false);
   const [textInputFocused, setTextInputFocused] = useState(true);
   const textInput = useRef(0);
+  const renderItem = ({item}) => (
+    <TouchableOpacity
+      onPress={() => {
+        Keyboard.dismiss;
+        navigation.navigate('RestaurantSearchScreen', {
+          item: item.name,
+        });
+        setModalVisible(false);
+        setTextInputFocused(true);
+      }}>
+      <View style={styles.view2}>
+        <Text style={{color: colors.grey2, fontSize: 15}}>{item.name}</Text>
+      </View>
+    </TouchableOpacity>
+  );
   return (
     <View style={{alignItems: 'center'}}>
       <TouchableWithoutFeedback
@@ -75,23 +91,7 @@ const SearchComponent = ({navigation}) => {
           </View>
           <FlatList
             data={data}
-            renderItem={({item}) => {
-              <TouchableOpacity
-                onPress={() => {
-                  Keyboard.dismiss;
-                  navigation.navigate('RestaurantSearchScreen', {
-                    item: item.name,
-                  });
-                  setModalVisible(false);
-                  setTextInputFocused(true);
-                }}>
-                <View style={styles.view2}>
-                  <Text style={{color: colors.grey2, fontSize: 15}}>
-                    {item.name}
-                  </Text>
-                </View>
-              </TouchableOpacity>;
-            }}
+            renderItem={renderItem}
             keyExtractor={item => item.id}
           />
         </View>
