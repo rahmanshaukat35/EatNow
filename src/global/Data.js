@@ -12,6 +12,66 @@ export const filterData = [
   {name: 'Sea food', image: require('../assests/images/seafood.png'), id: '6'},
 ];
 
+export const filterData2 = [
+  {
+    name: 'Fast food',
+    image:
+      'https://youngmenshealthsite.org/wp-content/uploads/2015/05/iStock_000016515039Small.jpg',
+    id: '0',
+  },
+  {
+    name: 'Burgers',
+    image:
+      'https://www.eatthis.com/wp-content/uploads/sites/4/2022/06/fast-food-assortment-soda.jpg?quality=82&strip=1',
+    id: '1',
+  },
+  {
+    name: 'Salads',
+    image:
+      'https://www.allrecipes.com/thmb/k0Yugx575taH6eaSpD51xIC3s-4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-14452-GreenSalad-0025-4x3-527a1d42f2c042c9bcaf1a68223d34e5.jpg',
+    id: '2',
+  },
+  {
+    name: 'Hotdog',
+    image:
+      'https://blog.blueapron.com/wp-content/uploads/2022/07/loaded-hot-dogs.jpg',
+    id: '3',
+  },
+  {
+    name: 'Chinese',
+    image:
+      'https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2hpbmVzZSUyMGZvb2R8ZW58MHx8MHx8&w=1000&q=80',
+    id: '4',
+  },
+  {
+    name: 'Mexican',
+    image: 'https://www.pinkvilla.com/files/chinese_noodles.jpg',
+    id: '5',
+  },
+  {
+    name: 'Sea food',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/a/ae/Plateau_van_zeevruchten.jpg',
+    id: '6',
+  },
+  {
+    name: 'Chinese Food',
+    image: 'https://i.ytimg.com/vi/K71606L_7PY/maxresdefault.jpg',
+    id: '7',
+  },
+  {
+    name: 'Mexican pie',
+    image:
+      'https://media.newyorker.com/photos/59097261019dfc3494ea24a5/master/w_2560%2Cc_limit/Hsu-Changing-Meanings-of-Asian-Food-in-America.jpg',
+    id: '8',
+  },
+  {
+    name: 'Ocean dish',
+    image:
+      'https://publish.purewow.net/wp-content/uploads/sites/2/2021/07/types-of-shellfish-oysters.jpg?fit=728%2C524',
+    id: '9',
+  },
+];
 export const restaurantsData = [
   {
     restaurantName: 'Mc Donalds',

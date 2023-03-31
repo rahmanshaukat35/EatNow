@@ -15,12 +15,26 @@ import {Icon} from 'react-native-elements';
 import * as Animatable from 'react-native-animatable';
 import {useNavigation} from '@react-navigation/native';
 import {filterData} from '../global/Data';
+import filter from 'lodash/filter';
 const SearchComponent = () => {
   const navigation = useNavigation();
   const [data, setData] = useState([...filterData]);
   const [modalVisible, setModalVisible] = useState(false);
   const [textInputFocused, setTextInputFocused] = useState(true);
   const textInput = useRef(0);
+  const contains = ({name}, query) => {
+    if (name.includes(query)) {
+      return true;
+    }
+    return false;
+  };
+  const handleSearch = text => {
+    const dataS = filter(filterData, userSearch => {
+      return contains(userSearch, text);
+    });
+
+    setData([...dataS]);
+  };
   const renderItem = ({item}) => (
     <TouchableOpacity
       onPress={() => {
@@ -57,12 +71,14 @@ const SearchComponent = () => {
         <View style={styles.modal}>
           <View style={styles.view1}>
             <View style={styles.TextInput}>
-              <Animatable.View>
+              <Animatable.View
+                animation={textInputFocused ? 'fadeInRight' : 'fadeInLeft'}
+                duration={400}>
                 <Icon
                   name={textInputFocused ? 'arrow-back' : 'search'}
                   onPress={() => {
                     if (textInputFocused) setModalVisible(false);
-                    setTextInputFocused(false);
+                    setTextInputFocused(true);
                   }}
                   style={styles.icon2}
                   type="material"
@@ -71,11 +87,20 @@ const SearchComponent = () => {
               </Animatable.View>
               <TextInput
                 style={{width: '90%'}}
-                placeholder=""
+                placeholder="Search"
                 autoFocus={false}
                 ref={textInput}
+                onFocus={() => {
+                  setTextInputFocused(true);
+                }}
+                onBlur={() => {
+                  setTextInputFocused(false);
+                }}
+                onChangeText={handleSearch}
               />
-              <Animatable.View>
+              <Animatable.View
+                animation={textInputFocused ? 'fadeInLeft' : ''}
+                duration={400}>
                 <Icon
                   name={textInputFocused ? 'cancel' : null}
                   iconStyle={{color: colors.grey3}}
